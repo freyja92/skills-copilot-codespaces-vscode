@@ -1,80 +1,11 @@
 //create a web server
+const express = require('express');
+const router = express.Router();
+const Comment = require('../models/comment');
+const Post = require('../models/post');
+const commentsController = require('../controllers/comments_controller');
 
-const http = require('http');
-const port = 3000;
-const server = http.createServer(function(req, res){
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('Hello World\n');
-});
+router.post('/create', commentsController.create);
+router.get('/destroy/:id', commentsController.destroy);
 
-server.listen(port, function(){
-    console.log('Server running at http://localhost:${port}/');
-});
-control + enter
-//open browser and type localhost:3000
-//you will see Hello World in the browser
-
-// Path: comments.js
-//create a web server
-const http = require('http');
-const port = 3000;
-const server = http.createServer(function(req, res){
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('Hello World\n');
-});
-
-server.listen(port, function(){
-    console.log('Server running at http://localhost:${port}/');
-});
-control + enter
-//open browser and type localhost:3000
-//you will see Hello World in the browser
-
-// Path: comments.js
-//create a web server
-const http = require('http');
-const port = 3000;
-const server = http.createServer(function(req, res){
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('Hello World\n');
-});
-
-server.listen(port, function(){
-    console.log('Server running at http://localhost:${port}/');
-});
-control + enter
-//open browser and type localhost:3000
-//you will see Hello World in the browser
-
-// Path: comments.js
-//create a web server
-const http = require('http');
-const port = 3000;
-const server = http.createServer(function(req, res){
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('Hello World\n');
-});
-
-server.listen(port, function(){
-    console.log('Server running at http://localhost:${port}/');
-});
-control + enter
-//open browser and type localhost:3000
-//you will see Hello World in the browser
-
-// Path: comments.js
-//create a web server
-const http = require('http');
-const port = 3000;
-const server = http.createServer(function(req, res){
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('Hello World\n');
-});
-
-server.listen(port, function(){
-    console.log('Server running at http://localhost:${port}/');
-});
-control + enter
-//open browser and type localhost:3000
-
-
+module.exports = router;
